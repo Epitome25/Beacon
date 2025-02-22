@@ -282,61 +282,17 @@ let quizData = [];
 let userAnswers = [];
 let performanceHistory = JSON.parse(localStorage.getItem('performanceHistory')) || [];
 
-// Function to generate quiz questions dynamically based on the topic
-function generateQuizQuestions(topic) {
-    const questions = [
-        {
-            question: `What is the capital of ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-        {
-            question: `Who is the founder of ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-        {
-            question: `What is the main language spoken in ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-        {
-            question: `What is the population of ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-        {
-            question: `What is the currency used in ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-        {
-            question: `What is the national animal of ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-        {
-            question: `What is the largest city in ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-        {
-            question: `What is the official religion of ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-        {
-            question: `What is the main export of ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-        {
-            question: `What is the climate of ${topic}?`,
-            correct_answer: "Unknown",
-            incorrect_answers: ["Option 1", "Option 2", "Option 3"],
-        },
-    ];
-    return questions;
+// Fetch quiz questions from API
+async function fetchQuizQuestions(topic) {
+    try {
+        // Use the Open Trivia Database API to fetch questions
+        const response = await fetch(`https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple`);
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error("Error fetching quiz questions:", error);
+        return null;
+    }
 }
 
 // Display quiz questions
@@ -348,11 +304,11 @@ function displayQuiz(questions) {
         const questionElement = document.createElement('div');
         questionElement.classList.add('quiz-question');
         questionElement.innerHTML = `
-            <h3>${question.question}</h3>
+            <h3>${decodeURIComponent(question.question)}</h3>
             ${shuffleArray([...question.incorrect_answers, question.correct_answer]).map((answer, i) => `
                 <label>
                     <input type="radio" name="question${index}" value="${answer}">
-                    ${answer}
+                    ${decodeURIComponent(answer)}
                 </label>
             `).join('')}
         `;
@@ -415,19 +371,18 @@ function updatePerformanceStats() {
 }
 
 // Start quiz
-startQuizButton.addEventListener('click', () => {
+startQuizButton.addEventListener('click', async () => {
     const topic = quizTopicInput.value.trim();
     if (!topic) {
         alert("Please enter a topic for your quiz.");
         return;
     }
 
-    // Generate quiz questions dynamically based on the topic
-    quizData = generateQuizQuestions(topic);
+    quizData = await fetchQuizQuestions(topic);
     if (quizData && quizData.length > 0) {
         displayQuiz(quizData);
     } else {
-        alert("Failed to generate quiz questions. Please try again.");
+        alert("Failed to fetch quiz questions. Please try again.");
     }
 });
 
