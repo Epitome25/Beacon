@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Submission - Beacon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Beacon</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chatbot.html">Chatbot</a></li>
+                    <li><a href="documents.html">Document Submission</a></li>
+                    <li><a href="course-info.html">Course Information</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="performance-tracker.html" data-translate="Performance">Quiz</a></li>
+                    <li><a href="#" id="auth-link">Login</a></li>
+                </ul>
+            </nav>
+            <!-- User Profile and Logout -->
+            <div class="user-profile">
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li id="logout-btn">Logout</li>
+                    </ul>
+                </div>
+                <div class="profile-logo" id="profile-logo">U</div> <!-- Default to 'U' -->
+            </div>
+        </div>
+    </header>
+
+    <section class="documents">
+        <div class="container">
+            <h2>Document Submission</h2>
+            <form id="document-form">
+                <label for="student-id">Student ID:</label>
+                <input type="text" id="student-id" name="student-id" required>
+                <label for="document">Upload Document:</label>
+                <input type="file" id="document" name="document" required>
+                <button type="submit">Upload</button>
+            </form>
+            <div id="upload-status"></div>
+
+            <h3>Your Uploaded Documents</h3>
+            <div id="document-list"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Beacon - Department of Technical Education, Government of Telangana</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

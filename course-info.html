@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Information - Beacon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Beacon</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chatbot.html">Chatbot</a></li>
+                    <li><a href="documents.html">Document Submission</a></li>
+                    <li><a href="course-info.html">Course Information</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="performance-tracker.html" data-translate="Performance">Quiz</a></li>
+                    <li><a href="#" id="auth-link">Login</a></li>
+                </ul>
+            </nav>
+            <!-- User Profile and Logout -->
+            <div class="user-profile">
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li id="logout-btn">Logout</li>
+                    </ul>
+                </div>
+                <div class="profile-logo" id="profile-logo">U</div> <!-- Default to 'U' -->
+            </div>
+        </div>
+    </header>
+
+    <section class="course-info">
+        <div class="container">
+            <h2>Course Information</h2>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for courses, syllabus, exams, or admission processes...">
+                <button id="search-btn">Search</button>
+            </div>
+
+            <!-- Display Search Results -->
+            <div id="search-results"></div>
+
+            <!-- Default College List -->
+            <div class="college-list">
+                <h3>Top 20 Colleges in Telangana</h3>
+                <ul id="college-list">
+                    <li><a href="https://www.iith.ac.in/" target="_blank">Indian Institute of Technology Hyderabad (IIT Hyderabad)</a></li>
+                    <li><a href="https://www.iiit.ac.in/" target="_blank">International Institute of Information Technology Hyderabad (IIIT Hyderabad)</a></li>
+                    <li><a href="https://www.osmania.ac.in/" target="_blank">Osmania University, Hyderabad</a></li>
+                    <li><a href="https://www.uohyd.ac.in/" target="_blank">University of Hyderabad (UoH)</a></li>
+                    <li><a href="https://jntuh.ac.in/" target="_blank">Jawaharlal Nehru Technological University Hyderabad (JNTUH)</a></li>
+                    <li><a href="https://www.nitw.ac.in/" target="_blank">National Institute of Technology Warangal (NIT Warangal)</a></li>
+                    <li><a href="https://www.isb.edu/" target="_blank">Indian School of Business (ISB), Hyderabad</a></li>
+                    <li><a href="https://www.manuu.edu.in/" target="_blank">Maulana Azad National Urdu University (MANUU), Hyderabad</a></li>
+                    <li><a href="https://www.nalsar.ac.in/" target="_blank">Nalsar University of Law, Hyderabad</a></li>
+                    <li><a href="https://www.iimhyd.ac.in/" target="_blank">Indian Institute of Management Hyderabad (IIM Hyderabad)</a></li>
+                    <li><a href="https://www.kakatiya.ac.in/" target="_blank">Kakatiya University, Warangal</a></li>
+                    <li><a href="https://www.cbit.ac.in/" target="_blank">Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad</a></li>
+                    <li><a href="https://www.vce.ac.in/" target="_blank">Vasavi College of Engineering, Hyderabad</a></li>
+                    <li><a href="https://www.griet.ac.in/" target="_blank">Gokaraju Rangaraju Institute of Engineering and Technology (GRIET), Hyderabad</a></li>
+                    <li><a href="https://www.mguniversity.ac.in/" target="_blank">Mahatma Gandhi University, Nalgonda</a></li>
+                    <li><a href="https://www.telanganauniversity.ac.in/" target="_blank">Telangana University, Nizamabad</a></li>
+                    <li><a href="https://www.teluguuniversity.ac.in/" target="_blank">Potti Sreeramulu Telugu University, Hyderabad</a></li>
+                    <li><a href="https://www.satavahana.ac.in/" target="_blank">Satavahana University, Karimnagar</a></li>
+                    <li><a href="https://www.jnafau.ac.in/" target="_blank">Jawaharlal Nehru Architecture and Fine Arts University, Hyderabad</a></li>
+                    <li><a href="https://www.braou.ac.in/" target="_blank">Dr. B.R. Ambedkar Open University (BRAOU), Hyderabad</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Beacon - Department of Technical Education, Government of Telangana</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

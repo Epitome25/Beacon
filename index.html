@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beacon - The Guiding Light for Students</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Beacon</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" data-translate="home">Home</a></li>
+                    <li><a href="chatbot.html" data-translate="chatbot">Chatbot</a></li>
+                    <li><a href="documents.html" data-translate="documentSubmission">Document Submission</a></li>
+                    <li><a href="course-info.html" data-translate="courseInformation">Course Information</a></li>
+                    <li><a href="faq.html" data-translate="faq">FAQs</a></li>
+                    <li><a href="performance-tracker.html" data-translate="Performance">Quiz</a></li>
+                    <li><a href="#" id="auth-link" data-translate="login">Login</a></li>
+                </ul>
+            </nav>
+            <!-- User Profile and Logout -->
+            <div class="user-profile">
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="settings.html" data-translate="settings">Settings</a></li>
+                        <li><a href="dashboard.html" data-translate="dashboard">Dashboard</a></li>
+                        <li id="logout-btn" data-translate="logout">Logout</li>
+                    </ul>
+                </div>
+                <div class="profile-logo" id="profile-logo">U</div> <!-- Default to 'U' -->
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2 data-translate="welcome">Welcome to Beacon</h2>
+            <p data-translate="heroDescription">Your AI-powered assistant for academic queries, document submission, and course information.</p>
+            <a href="chatbot.html" class="btn" data-translate="tryChatbot">Try the Chatbot</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 data-translate="keyFeatures">Key Features</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <h3 data-translate="support24x7">24/7 Support</h3>
+                    <p data-translate="supportDescription">Get instant answers to your queries anytime, anywhere.</p>
+                </div>
+                <div class="feature">
+                    <h3 data-translate="documentUpload">Document Submission</h3>
+                    <p data-translate="documentDescription">Upload and verify documents seamlessly.</p>
+                </div>
+                <div class="feature">
+                    <h3 data-translate="courseInfo">Course Information</h3>
+                    <p data-translate="courseDescription">Access detailed information about courses and programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2 data-translate="aboutBeacon">About Beacon</h2>
+            <p data-translate="aboutDescription">Beacon is an AI-powered chatbot developed by the Department of Technical Education, Government of Telangana, to provide real-time assistance to students. Our mission is to support students with academic queries, document submission, and course information, ensuring a seamless and efficient experience.</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2 data-translate="contactUs">Contact Us</h2>
+            <p data-translate="contactDescription">For any queries or support, please reach out to us:</p>
+            <ul>
+                <li data-translate="email">Email: support@beacon-telangana.edu</li>
+                <li data-translate="phone">Phone: +91 1234567890</li>
+                <li data-translate="address">Address: Department of Technical Education, Hyderabad, Telangana</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Beacon - Department of Technical Education, Government of Telangana</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
